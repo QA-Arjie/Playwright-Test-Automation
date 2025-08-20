@@ -1,9 +1,9 @@
 require('dotenv').config()
 const { test, expect } = require('@playwright/test')
-const { SignupPage } = require('../Page Class/SignupPage')
-const { LoginPage } = require('../Page Class/LoginPage')
-const { ProductPage } = require('../Page Class/ProductPage')
-const { CheckoutPage } = require('../Page Class/CheckoutPage')
+const { SignupPage } = require('../Page Object/SignupPage')
+const { LoginPage } = require('../Page Object/LoginPage')
+const { ProductPage } = require('../Page Object/ProductPage')
+const { CheckoutPage } = require('../Page Object/CheckoutPage')
 const { customerInfo } = require('../Test Data/testdata')
 const { saveUserEmailToEnv } = require('../utils/saveToEnv');
 
@@ -41,9 +41,9 @@ test('Customer Checkout', async ({page}) => {
 
     // Checkout Order
     await productPage.CheckoutOrder()
-    // expect(page.locator('#checkout_line_items')).toContainText('Blue Polo Shirt'); // Verifies product name
-    //await expect(page.locator('#checkout_line_items')).toContainText('Color: Blue, Size: M'); // Verifies Size
-    //await expect(page.locator('#checkout_summary')).toContainText('$49.98'); // Verifies Price, for this test case Quantity is 2 and the Price is 24.99
+    expect(page.locator('#checkout_line_items')).toContainText('Blue Polo Shirt'); // Validate the product name in the checkout summary
+    await expect(page.locator('#checkout_line_items')).toContainText('Color: Blue, Size: M'); // Validate Size
+    await expect(page.locator('#checkout_summary')).toContainText('$49.98'); // Verify Price, for this test case Quantity is 2 and the Price is 24.99
 
     // Input Customer Information
    await checkoutPage.CustomerInformation(
@@ -71,7 +71,7 @@ test('Customer Checkout', async ({page}) => {
 
   // Payment
   await checkoutPage.PayOrder()
-  await expect(page.getByRole('heading', { name: 'Thanks QA for your order!' })).toBeVisible() // Verify Order Confirmation
+  await expect(page.getByRole('heading', { name: 'Thanks QA for your order!' })).toBeVisible({timeout: 15000}) // Verify Order Confirmation
 
 //await page.pause()
 })

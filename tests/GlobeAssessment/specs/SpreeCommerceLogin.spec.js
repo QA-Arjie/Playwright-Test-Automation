@@ -1,6 +1,6 @@
 require('dotenv').config()
 const { test, expect } = require('@playwright/test')
-const { LoginPage } = require('../Page Class/LoginPage')
+const { LoginPage } = require('../Page Object/LoginPage')
 
 test('Customer Login', async ({page}) => {
     const Login = new LoginPage(page)
