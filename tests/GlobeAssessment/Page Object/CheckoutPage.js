@@ -51,7 +51,7 @@ class CheckoutPage {
         await this.cvcField.fill(cvc);
     }
     async PayOrder() {
-       //await this.PayBtn.scrollIntoViewIfNeeded({timeout: 40000});
+       await this.PayBtn.scrollIntoViewIfNeeded({timeout: 40000});
        await this.PayBtn.click({timeout: 50000})
     }
 

@@ -87,7 +87,8 @@ test('Customer Checkout', async ({page, browserName}) => {
     await expect(page).toHaveURL('https://demo.spreecommerce.org/')
     
     // Use saved email from browser-specific env if available, otherwise use newly created email
-    const loginEmail = browserEnv.SAVED_EMAIL || Email;
+    const loginEmail = Email;
+    //const loginEmail = browserEnv.SAVED_EMAIL || Email;
     const loginPassword = browserEnv.USER_PASSWORD;
 
     console.log(`Logging in with browser: ${browserName}, email: ${loginEmail}`);
