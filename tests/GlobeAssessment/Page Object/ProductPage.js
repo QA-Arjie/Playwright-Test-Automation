@@ -25,7 +25,7 @@ class ProductPage {
         await this.SelectSize.click()
         await this.TypeQuantity.click()
         await this.TypeQuantity.fill('')
-        await this.TypeQuantity.fill('2') // Change Quantity Here
+        await this.TypeQuantity.fill('2') // Change Quantity Here 
         await this.AddCartBtn.click()
     }
     async CheckoutOrder() {
