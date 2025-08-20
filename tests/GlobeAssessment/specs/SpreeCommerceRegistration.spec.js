@@ -12,7 +12,7 @@ test('Customer Signup', async ({page}) => {
 
     // Navigate to Spree Commerce
     await Signup.goToURL()
-    await expect(page).toHaveTitle('Spree Commerce DEMO') // Varify Title
+    await expect(page).toHaveTitle('Spree Commerce DEMO') // Varify Page Title
 
     // New User Registration
     await Signup.goToSignUp()

@@ -10,7 +10,7 @@ test('Customer Login', async ({page}) => {
     // Login
     await Login.gotoURL()
     await Login.gotoLogin(LoginEmail, LoginPassword)
-    await expect(page.getByText('Signed in successfully.')).toBeVisible()  // Verify that the user is logged in successfully
+    await expect(page.getByText('Signed in successfully.')).toBeVisible() // Verify that the user is logged in successfully 
 
 //await page.pause()
 })

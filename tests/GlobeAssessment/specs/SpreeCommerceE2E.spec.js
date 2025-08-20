@@ -71,7 +71,7 @@ test('Customer Checkout', async ({page}) => {
 
   // Payment
   await checkoutPage.PayOrder()
-  await expect(page.getByRole('heading', { name: 'Thanks QA for your order!' })).toBeVisible({timeout: 15000}) // Verify Order Confirmation
+  await expect(page.getByRole('heading', { name: 'Thanks QA for your order!' })).toBeVisible({timeout: 15000}) //  Verify Order Confirmation
 
 //await page.pause()
 })
