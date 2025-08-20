@@ -18,7 +18,8 @@ class SignupPage {
     }
     async goToSignUp() {
         await this.AccntBtn.click()
-        await this.SignUp.click()
+        await this.SignUp.waitFor({ state: 'visible', timeout: 60000 });
+        await this.SignUp.click({ timeout: 60000 });
     }
     async RegSignUp(Email, Password, PassConfirmation) {
         await this.EmailInput.fill(Email)
