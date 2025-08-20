@@ -1,5 +1,5 @@
 const fs = require('fs');
-const path = require('path'); // Required for resolving paths
+const path = require('path');
 
 function saveUserEmailToEnv(email) {
   const envPath = path.resolve(__dirname, '../../../.env');
@@ -26,4 +26,4 @@ function saveUserEmailToEnv(email) {
   fs.writeFileSync(envPath, newEnv);
 }
 
-module.exports = { saveUserEmailToEnv };
+module.exports = { saveUserEmailToEnv }

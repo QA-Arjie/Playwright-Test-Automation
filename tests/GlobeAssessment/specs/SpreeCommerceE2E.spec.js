@@ -18,7 +18,7 @@ test('Customer Checkout', async ({page}) => {
 
     // Launch the Spree Commerce website
     await signupPage.goToURL()  
-    await expect(page).toHaveTitle('Spree Commerce DEMO') // Varify Page Title
+    await expect(page).toHaveTitle('Spree Commerce DEMO') // Verify Page Title
 
     // New User Registration
     await signupPage.goToSignUp()
@@ -37,7 +37,7 @@ test('Customer Checkout', async ({page}) => {
 
     // Product Ordering
     await productPage.AddtoCart()
-    await expect(page.locator('#line-items')).toBeVisible() // Verify line item visibility in Order Page
+    await expect(page.locator('#line-items')).toBeVisible() // Verify line item visibility in Order Page 
 
     // Checkout Order
     await productPage.CheckoutOrder()
