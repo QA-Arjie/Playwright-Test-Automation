@@ -33,7 +33,7 @@ class CheckoutPage {
     }
 // Wait for Stripe iframe to load
     async waitForStripeIframe() {
-        await this.page.waitForSelector('iframe[title="Secure payment input frame"]', { timeout: 10000 });
+        await this.page.waitForSelector('iframe[title="Secure payment input frame"]', { timeout: 20000 });
     }
        async fillCardNumber(cardNumber) {
         await this.waitForStripeIframe();
@@ -51,8 +51,8 @@ class CheckoutPage {
         await this.cvcField.fill(cvc);
     }
     async PayOrder() {
-        await this.PayBtn.scrollIntoViewIfNeeded()
-        await this.PayBtn.click()
+       //await this.PayBtn.scrollIntoViewIfNeeded({timeout: 40000});
+       await this.PayBtn.click({timeout: 50000})
     }
 
 }

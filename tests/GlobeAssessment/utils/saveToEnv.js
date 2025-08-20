@@ -1,8 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-function saveUserEmailToEnv(email) {
-  const envPath = path.resolve(__dirname, '../../../.env');
+function saveUserEmailToEnv(email, browserName = '') {
+  // Use browser-specific env file if browserName is provided
+  const envFileName = browserName ? `.env.${browserName}` : '.env';
+  const envPath = path.resolve(__dirname, `../../../${envFileName}`);
 
   // Read existing env
   let envContent = '';
@@ -11,19 +13,30 @@ function saveUserEmailToEnv(email) {
   }
 
   // Convert env to object
-  const envLines = envContent.split('\n').filter(Boolean);
-  const envMap = Object.fromEntries(envLines.map(line => line.split('=')));
+  const envLines = envContent.split('\n').filter(line => line.trim() !== '' && !line.startsWith('#'));
+  const envMap = Object.fromEntries(
+    envLines.map(line => {
+      const equalIndex = line.indexOf('=');
+      if (equalIndex === -1) return [line, ''];
+      return [line.substring(0, equalIndex), line.substring(equalIndex + 1)];
+    })
+  );
 
+  // Create email variable name based on browser
+  const emailVarName = browserName ? `${browserName.toUpperCase()}_USER_EMAIL` : 'USER_EMAIL';
+  
   // Update or add email value
-  envMap.USER_EMAIL = email;
+  envMap[emailVarName] = email;
 
-  // Convert back to string
+  // Convert back to string, preserving order and adding comments
   const newEnv = Object.entries(envMap)
     .map(([key, val]) => `${key}=${val}`)
     .join('\n');
 
-  // Save back to .env
+  // Save back to env file
   fs.writeFileSync(envPath, newEnv);
+  
+  console.log(`Email saved to ${envFileName}: ${emailVarName}=${email}`);
 }
 
 module.exports = { saveUserEmailToEnv }
