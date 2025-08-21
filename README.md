@@ -8,9 +8,13 @@ A comprehensive end-to-end testing suite built with Playwright for automated bro
 
 
  **Features**
+
 Cross-browser testing (Chromium, Firefox, WebKit)
+
 Headless and headed execution modes
+
 Parallel test execution
+
 Auto-wait for elements
 
 
