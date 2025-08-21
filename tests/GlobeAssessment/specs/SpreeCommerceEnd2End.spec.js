@@ -9,7 +9,7 @@ const { saveUserEmailToEnv } = require('../utils/saveToEnv');
 const { getBrowserEnvConfig, loadBrowserEnv } = require('../utils/env-config');
 const { productName, quantity, size, price, shippingOption } = require('../Test Data/testdata2');
 
-test('Customer Login', async ({page, browserName}) => {
+test('Spree Commerce End2End Test', async ({page, browserName}) => {
     // Get browser-specific environment variables and test data
     const browserEnv = loadBrowserEnv(browserName, __dirname);
     const config = getBrowserEnvConfig(browserName);
