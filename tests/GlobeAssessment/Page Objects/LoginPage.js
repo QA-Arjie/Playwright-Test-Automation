@@ -7,7 +7,7 @@ class LoginPage {
         this.LoginPassInput = page.getByRole('textbox', { name: 'Password' });
         this.LoginBtn = page.getByRole('button', { name: 'Login' });
     }
-    async gotoURL() {
+    async gotoURL() { 
         await this.page.goto(this.URL)
     }
 

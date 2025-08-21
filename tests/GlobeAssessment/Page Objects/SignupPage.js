@@ -35,7 +35,7 @@ class SignupPage {
         await this.LogoutBtn.click()
 
     }
-
+ 
 }
 
 module.exports = { SignupPage }

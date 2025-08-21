@@ -11,7 +11,7 @@ class ProductPage {
     }
 
  async AddtoCart(productName,size,quantity) {
-    // Product
+    // Product 
     await this.ShopAll.click()
     const product = this.page.locator('.group.w-full.flex.flex-col', {hasText: productName});
     await product.click();

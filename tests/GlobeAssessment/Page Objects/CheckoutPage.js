@@ -9,7 +9,7 @@ class CheckoutPage {
         this.PostalCodeInput = page.getByRole('textbox', { name: 'Postal Code' });
         this.ContinueBtn = page.getByRole('button', { name: 'Save and Continue' });
         this.stripeIframe = page.frameLocator('iframe[title="Secure payment input frame"]')
-        //  (Inside iframe)
+        //  (Inside iframe) 
         this.cardNumberField = this.stripeIframe.locator('#Field-numberInput');
         this.expiryField = this.stripeIframe.locator('input[name="expiry"]');
         this.cvcField = this.stripeIframe.locator('input[name="cvc"]');
