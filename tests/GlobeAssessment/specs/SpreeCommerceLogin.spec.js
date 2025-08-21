@@ -1,6 +1,6 @@
 require('dotenv').config()
 const { test, expect } = require('@playwright/test')
-const { LoginPage } = require('../Page Object/LoginPage')
+const { LoginPage } = require('../Page Objects/LoginPage')
 
 test('Customer Login', async ({page}) => {
     const Login = new LoginPage(page)
@@ -10,7 +10,7 @@ test('Customer Login', async ({page}) => {
     // Login
     await Login.gotoURL()
     await Login.gotoLogin(LoginEmail, LoginPassword)
-    await expect(page.getByText('Signed in successfully.')).toBeVisible() // Verify that user is logged in successfully 
+    await expect(page.getByText('Signed in successfully.')).toBeVisible() // Verify that user is logged in successfully  
 
 //await page.pause()
 })

@@ -90,7 +90,7 @@ test('Spree Commerce End2End Test', async ({page, browserName}) => {
 
     // Payment
     await checkoutPage.PayOrder()
-    await expect(page.locator('h4')).toContainText('Thanks QA for your order!'); // Verify Order Confirmation 
+    await expect(page.locator('h4')).toContainText('Thanks QA for your order!'); // Verify Order Confirmation  
         console.log('Order Created:', 'Successfully')
 
     //await page.pause() //For Debugging

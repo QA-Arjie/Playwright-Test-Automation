@@ -1,6 +1,6 @@
 require('dotenv').config()
 const {test, expect} = require('@playwright/test')
-const { SignupPage } = require('../Page Object/SignupPage')
+const { SignupPage } = require('../Page Objects/SignupPage')
 const { saveUserEmailToEnv } = require('../utils/saveToEnv');
 
 
