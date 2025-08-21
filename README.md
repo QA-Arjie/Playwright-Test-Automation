@@ -19,18 +19,27 @@ Auto-wait for elements
 
 
 **Best Practices**
+
 1. Implement Page Object Models for better maintainability
-2. Use meaningful test descriptions and organize tests logically
-3. Handle async operations with proper waits
-4. Keep tests independent and avoid test interdependencies
+   
+3. Use meaningful test descriptions and organize tests logically
+   
+5. Handle async operations with proper waits
+   
+7. Keep tests independent and avoid test interdependencies
+   
 
 
 **Installation**
 1. Clone the repository:
+   
     git clone https://github.com/yourusername/your-repo-name.git
+   
     cd your-repo-name
-2. Install dependencies:
+3. Install dependencies:
+   
     npm install
+   
     npx playwright install
 
 
