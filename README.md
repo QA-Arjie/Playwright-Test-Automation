@@ -11,6 +11,8 @@ A comprehensive end-to-end testing suite built with Playwright for automated bro
 
 Cross-browser testing (Chromium, Firefox, WebKit)
 
+Diffent test data for each browser
+
 Headless and headed execution modes
 
 Parallel test execution
@@ -22,11 +24,11 @@ Auto-wait for elements
 
 1. Implement Page Object Models for better maintainability
    
-3. Use meaningful test descriptions and organize tests logically
+2. Use meaningful test descriptions and organize tests logically
    
-5. Handle async operations with proper waits
+3. Handle async operations with proper waits
    
-7. Keep tests independent and avoid test interdependencies
+4. Keep tests independent and avoid test interdependencies
    
 
 

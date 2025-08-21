@@ -4,10 +4,9 @@ const { SignupPage } = require('../Page Objects/SignupPage')
 const { LoginPage } = require('../Page Objects/LoginPage')
 const { ProductPage } = require('../Page Objects/ProductPage')
 const { CheckoutPage } = require('../Page Objects/CheckoutPage')
-const { getBrowserTestData } = require('../Test Data/testdata')
+const { getBrowserTestData } = require('../Test Data/testdata5')
 const { saveUserEmailToEnv } = require('../utils/saveToEnv');
 const { getBrowserEnvConfig, loadBrowserEnv } = require('../utils/env-config');
-const { productName, quantity, size, price, shippingOption } = require('../Test Data/testdata2');
 
 test('Spree Commerce End2End Test', async ({page, browserName}) => {
     // Get browser-specific environment variables and test data
@@ -51,15 +50,18 @@ test('Spree Commerce End2End Test', async ({page, browserName}) => {
         console.log('Login:', 'Successfull')
 
     // Select Product, Size and Quantity
-    await productPage.AddtoCart(productName,size,quantity)
+    await productPage.AddtoCart(
+      customerInfo.productName,
+      customerInfo.size,
+      customerInfo.quantity)
     await expect(page.getByText('or continue below')).toBeVisible(); // Verify Checkout Page
 
     // Click Checkout
     await productPage.Checkout()
 
     // Verify Price total based on selected Product and Quantity
-    const expectedTotal = (parseFloat(price) * parseInt(quantity)).toFixed(2);
-    await expect(page.locator('#checkout_summary')).toContainText(expectedTotal);
+    const expectedTotal = (parseFloat(customerInfo.price) * parseInt(customerInfo.quantity)).toFixed(2)
+    await expect(page.locator('#checkout_summary')).toContainText(expectedTotal)
     console.log('Expected total price: $' + expectedTotal);
 
     // Input Customer Information
@@ -73,11 +75,14 @@ test('Spree Commerce End2End Test', async ({page, browserName}) => {
    await checkoutPage.ContinueButton()
 
     // Delivery Option
-    await expect(page.getByRole('heading', { name: 'Delivery method from Shop' })).toBeVisible(); // Verify Delivery Method Page
-    await checkoutPage.DeliveryMethod(shippingOption)
+    await expect(page.getByRole('heading', { name: 'Delivery method from Shop' })).toBeVisible() // Verify Delivery Method Page
+    await checkoutPage.DeliveryMethod(customerInfo.shippingOption)
+    await expect(page.getByRole('radio', { name: customerInfo.shippingOption })).toBeChecked()
+    console.log('Delivery Option:', customerInfo.shippingOption)
+
     await checkoutPage.ContinueButton()
 
-    // Input Payment Information and Order Checkout - using browser-specific credentials
+    // Input Payment Information and Order Checkout 
     const cardNumber = config.CARD_NUMBER || browserEnv.CARD_NUMBER;
     const expiration = config.EXPIRY || browserEnv.EXPIRY;
     const cvc = config.CVC || browserEnv.CVC;
