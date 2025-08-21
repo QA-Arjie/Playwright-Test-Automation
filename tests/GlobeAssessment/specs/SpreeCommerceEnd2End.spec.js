@@ -1,9 +1,9 @@
 require('dotenv').config()
 const { test, expect } = require('@playwright/test')
-const { SignupPage } = require('../Page Object/SignupPage')
-const { LoginPage } = require('../Page Object/LoginPage')
-const { ProductPage } = require('../Page Object/ProductPage')
-const { CheckoutPage } = require('../Page Object/CheckoutPage')
+const { SignupPage } = require('../Page Objects/SignupPage')
+const { LoginPage } = require('../Page Objects/LoginPage')
+const { ProductPage } = require('../Page Objects/ProductPage')
+const { CheckoutPage } = require('../Page Objects/CheckoutPage')
 const { getBrowserTestData } = require('../Test Data/testdata')
 const { saveUserEmailToEnv } = require('../utils/saveToEnv');
 const { getBrowserEnvConfig, loadBrowserEnv } = require('../utils/env-config');
@@ -90,7 +90,7 @@ test('Customer Login', async ({page, browserName}) => {
 
     // Payment
     await checkoutPage.PayOrder()
-    await expect(page.locator('h4')).toContainText('Thanks QA for your order!'); // Verify Order Confirmation   
+    await expect(page.locator('h4')).toContainText('Thanks QA for your order!'); // Verify Order Confirmation 
         console.log('Order Created:', 'Successfully')
 
     //await page.pause() //For Debugging

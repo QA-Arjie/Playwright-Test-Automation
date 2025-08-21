@@ -34,7 +34,7 @@ function getBrowserTestData(browserName) {
   return testData[browserName] || testData.chromium;
 }
 
-// Keep the original for backward compatibility
+// Keep the original for backward compatibility  
 const customerInfo = {
   firstName: 'QA',
   lastName: 'Testing',
