@@ -94,7 +94,7 @@ test('Customer Checkout', async ({page, browserName}) => {
     console.log(`Logging in with browser: ${browserName}, email: ${loginEmail}`);
 
     await loginPage.gotoLogin(loginEmail, loginPassword)
-    await expect(page.getByText('Signed in successfully.')).toBeVisible()  // Verify that the user is logged in successfully
+    await expect(page.getByText('Signed in successfully.')).toBeVisible()  // Verify that the user is logged in successfully  
 
     // Product Ordering
     await productPage.AddtoCart()
