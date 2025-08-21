@@ -1,4 +1,4 @@
-<img width="905" height="301" alt="image" src="https://github.com/user-attachments/assets/0a12c927-f7f8-4782-89ee-840afb69d5a2" />**Project Name** - Spree Commerce End to End Testing using Playwright
+**Project Name** - Spree Commerce End to End Testing using Playwright
 
 A comprehensive end-to-end testing suite built with Playwright for automated browser testing across Chromium, Firefox, and WebKit.
 
@@ -39,6 +39,8 @@ Run test in specific browser:
   npx playwright test --project=chromium
   npx playwright test --project=firefox
   npx playwright test --project=webkit
+
+<img width="905" height="301" alt="image" src="https://github.com/user-attachments/assets/0a12c927-f7f8-4782-89ee-840afb69d5a2" />
 
 **Project Structure** 
 ├── GlobeAssessment/
