@@ -25,6 +25,7 @@ Auto-wait for elements
     npx playwright install
 
 **Running Tests**
+
 Run all test: npx playwright test
 
 Run in headed mode: npx playwright test --headed
