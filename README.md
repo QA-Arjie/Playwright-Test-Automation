@@ -46,8 +46,7 @@ Run test in specific browser:
   npx playwright test --project=webkit
 
 **Best Practices**
-1. Use data-testid attributes for reliable element selection
-2. Implement Page Object Models for better maintainability
-3. Use meaningful test descriptions and organize tests logically
-4. Handle async operations with proper waits
-5. Keep tests independent and avoid test interdependencies
+1. Implement Page Object Models for better maintainability
+2. Use meaningful test descriptions and organize tests logically
+3. Handle async operations with proper waits
+4. Keep tests independent and avoid test interdependencies
