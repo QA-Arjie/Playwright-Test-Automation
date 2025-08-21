@@ -60,7 +60,7 @@ Run test in specific browser:
   npx playwright test --project=firefox
   npx playwright test --project=webkit
 
-**Project Structure**
+**Project Structure** 
 
 
 <img width="881" height="288" alt="image" src="https://github.com/user-attachments/assets/8ed246f4-17d1-4e88-860c-54b791bec38b" />
