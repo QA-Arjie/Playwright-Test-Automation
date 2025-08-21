@@ -40,20 +40,6 @@ Run test in specific browser:
   npx playwright test --project=firefox
   npx playwright test --project=webkit
 
-<img width="905" height="301" alt="image" src="https://github.com/user-attachments/assets/0a12c927-f7f8-4782-89ee-840afb69d5a2" />
-
 **Project Structure** 
-├── GlobeAssessment/
-│   ├── Page Objects                         # Page Object Models
-│   ├── specs/                               # End-to-end tests
-        ├──SpreeCommerceEnd2End.spec.js      # Spree Commerce End 2 End from User Registration to Ordering
-        ├──SpreeCommerceLogin.spec.js        # This login functionality is designed to run independently
-        ├──SpreeCommerceRegistration.spec.js # This Registration functionality is designed to run independently
-│   ├── Test Data/                           # Test data is organized here
-│   └── utils/                               # Environment Config
-├── .env                                     # Store sensitive or configuration data outside code
-├── .env.chromium                            # Stores environment variables specific to test runs using the Chromium browser only.
-├── .env.firefox                             # Stores environment variables specific to test runs using the Firefox browser only.
-├── .env.webkit                              # Stores environment variables specific to test runs using the Webkit browser only.
-├── playwright.config.js                     # Playwright configuration            
-└── package.json
+<img width="881" height="288" alt="image" src="https://github.com/user-attachments/assets/8ed246f4-17d1-4e88-860c-54b791bec38b" />
+
