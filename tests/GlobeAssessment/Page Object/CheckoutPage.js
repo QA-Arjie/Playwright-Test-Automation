@@ -9,6 +9,7 @@ class CheckoutPage {
         this.PostalCodeInput = page.getByRole('textbox', { name: 'Postal Code' });
         this.ContinueBtn = page.getByRole('button', { name: 'Save and Continue' });
         this.DeliveryOption = page.getByRole('radio', { name: 'Premium Delivery in 2-3' });
+        //this.DeliveryOpt = page.getByRole('radio', { name: shippingOptionLabel });
         this.stripeIframe = page.frameLocator('iframe[title="Secure payment input frame"]')
         //  (Inside iframe)
         this.cardNumberField = this.stripeIframe.locator('#Field-numberInput');
@@ -28,8 +29,9 @@ class CheckoutPage {
     async ContinueButton() {
          await this.ContinueBtn.click()
     }
-    async DeliveryMethod() {
-        await this.DeliveryOption.check()
+    async DeliveryMethod(shippingOptionLabel) {
+        //await this.DeliveryOption.check()
+        await this.page.getByRole('radio', { name: shippingOptionLabel }).check();
     }
 // Wait for Stripe iframe to load
     async waitForStripeIframe() {
